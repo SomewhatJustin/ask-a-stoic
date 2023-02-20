@@ -1,32 +1,50 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
+import { askQuestion } from './utlis'
+import Ask from './Ask'
+import Answer from './Answer'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [myPhil, setMyPhil] = useState("Seneca")
+  const [myQuestion, setMyQuestion] = useState("")
+  const [isAskMode, setIsAskMode] = useState(true)
+  const [myAnswer, setMyAnswer] = useState("")
+
+  useEffect(() => {
+    async function getAnswer() {
+      if (myQuestion) {
+        const answer = await askQuestion(myPhil, myQuestion);
+        setMyAnswer(answer);
+      }
+    }
+
+    getAnswer();
+  }, [isAskMode]);
+
+  function handleSendQuestion() {
+    setIsAskMode(false);
+  }
 
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1>Ask a Stoic</h1>
+      {isAskMode ? (
+        <Ask
+          myQuestion={myQuestion}
+          setMyQuestion={setMyQuestion}
+          myPhil={myPhil}
+          setMyPhil={setMyPhil}
+          setIsAskMode={setIsAskMode}
+          sendQuestion={handleSendQuestion}
+        />
+      ) : (
+        <Answer
+          myPhil={myPhil}
+          myQuestion={myQuestion}
+          myAnswer={myAnswer}
+        />
+      )}
     </div>
   )
 }

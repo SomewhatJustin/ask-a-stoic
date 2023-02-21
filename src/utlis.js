@@ -1,5 +1,11 @@
 import { Configuration, OpenAIApi } from "openai";
 
+if import.meta.env.VITE_OPENAI_API_KEY == null {
+  const configuration = new Configuration({
+    apiKey: VITE_OPENAI_API_KEY,
+  });
+}
+
 const configuration = new Configuration({
   apiKey: import.meta.env.VITE_OPENAI_API_KEY,
 });

@@ -33,3 +33,7 @@ footer {
   margin-top: 200px;
   color: #aaa;
 }
+
+footer p {
+  font-size: 1rem;
+}

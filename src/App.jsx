@@ -45,6 +45,10 @@ function App() {
           myAnswer={myAnswer}
         />
       )}
+      <footer>
+        <p>Disclaimer: All these philosophers are dead. Your answer is coming from a language model trained on their writings. It is not a substitute for professional advice.</p>
+        <p>Made by <a href="https://justin.how">Justin Fowler</a></p>
+      </footer>
     </div>
   )
 }

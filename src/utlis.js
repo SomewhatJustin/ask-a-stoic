@@ -14,7 +14,7 @@ async function askQuestion(phil, question) {
     Your response should be two paragraphs long. 3-4 sentences per paragraph should be enough. You do not need to provide context for who you are. You can just respond to the question.
     Then, in a new paragraph, still responding as ${phil}, point the user to the texts or books they can read to learn more about the principles behind your answer.`,
     max_tokens: 300,
-    temperature: 0,
+    temperature: 0.7,
   });
 
   return response.data.choices[0].text;

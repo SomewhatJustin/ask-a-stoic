@@ -18,10 +18,7 @@ export default function Ask({ myQuestion, setMyQuestion, myPhil, setMyPhil, setI
         <option value="Marcus Aurelius">Marcus Aurelius</option>
         <option value="Epictetus">Epictetus</option>
       </select>
-
-
-
-      <textarea name="question" id="question" cols="30" rows="10" onChange={e => setMyQuestion(e.target.value)} value={myQuestion}></textarea>
+      <textarea name="question" id="question" cols="30" rows="10" placeholder="I'm thinking about moving to the countryside, but I'm worried I will lose my friends. What should I do?" onChange={e => setMyQuestion(e.target.value)} value={myQuestion}></textarea>
       <button onClick={sendQuestion}>Ask</button>
     </div >
 

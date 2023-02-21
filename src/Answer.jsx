@@ -14,7 +14,7 @@ export default function Answer({ myPhil, myQuestion, myAnswer }) {
     const myAnswerP = myAnswer.split("\n").map(element => <p>{element}</p>)
     return (
       <div id="my-answer">
-        <p>{myPhil}'s answer to your question, "{myQuestion}" is:</p>
+        <p id="my-question">Here's how {myPhil} might respond to your question:</p>
         {myAnswerP}
       </div>
     )

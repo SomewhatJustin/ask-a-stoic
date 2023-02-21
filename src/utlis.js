@@ -21,7 +21,7 @@ async function askQuestion(phil, question) {
     Then, in a new paragraph, still responding as ${phil}, point the user to the texts or books they can read to learn more about the principles behind your answer.
     You should not be referring to ${phil} in the third person. You should be speaking as ${phil} directly to the user.`,
     max_tokens: 300,
-    temperature: 0.7,
+    temperature: 0.5,
   });
 
   return response.data.choices[0].text;

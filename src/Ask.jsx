@@ -14,12 +14,12 @@ export default function Ask({ myQuestion, setMyQuestion, myPhil, setMyPhil, setI
     <div id="ask-module">
       <label htmlFor="phil">Select your philosopher</label>
       <select id="phil" name="phil" onChange={(e) => setMyPhil(e.target.value)}>
-        <option value="Seneca"><img src={seneca} />Seneca</option>
+        <option value="Seneca">Seneca</option>
         <option value="Marcus Aurelius">Marcus Aurelius</option>
         <option value="Epictetus">Epictetus</option>
       </select>
 
-    
+
 
       <textarea name="question" id="question" cols="30" rows="10" onChange={e => setMyQuestion(e.target.value)} value={myQuestion}></textarea>
       <button onClick={sendQuestion}>Ask</button>

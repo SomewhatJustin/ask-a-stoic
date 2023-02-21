@@ -6,3 +6,12 @@
   justify-content: space-evenly;
   align-items: center;
 }
+
+textarea {
+  margin: 20px;
+}
+
+#ask-module button {
+  background-color: #213547;
+  color: #fafafa;
+}
